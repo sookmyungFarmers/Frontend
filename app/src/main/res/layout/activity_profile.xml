@@ -1,78 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/white">
 
-    <!-- Home Title -->
+
+    <!-- UserName Title -->
     <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
+        android:id="@+id/titleTextView4"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:textSize="24sp"
+        android:text="👧 UserName"
+        android:textSize="30sp"
         android:layout_marginTop="30dp"
         android:layout_marginStart="25dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <Button
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="⚙️"
+        android:textSize="30sp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"/>
+
+
     <!--Line-->
     <View
-        android:id="@+id/divider1"
+        android:id="@+id/divider3"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#BDBDBD"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"/>
+        app:layout_constraintTop_toBottomOf="@id/titleTextView4"/>
 
-    <!-- Message -->
-    <TextView
-        android:id="@+id/messageTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:text="8월 20일, 오늘은 아직 커밋하지 않았어요 :)"
-        android:textSize="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/rounded_background"
-        android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!--Grass Image-->
     <ImageView
-        android:id="@+id/myGrass2"
-        android:layout_width="385dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/rounded_background"
+        android:id="@+id/logoImage"
+        android:layout_width="410dp"
+        android:layout_height="560dp"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toTopOf="@+id/divider4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messageTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
-
-
-    <!--Grass Image-->
-    <ImageView
-        android:id="@+id/myGrass"
-        android:layout_width="385dp"
-        android:layout_height="60dp"
-        android:src="@drawable/rounded_background"
-        app:layout_constraintBottom_toTopOf="@+id/customBottomNavigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myGrass2" />
-
-    <!--Line2-->
+    <!--Line-->
     <View
-        android:id="@+id/divider2"
+        android:id="@+id/divider4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#BDBDBD"
+        android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/customBottomNavigation" />
 
     <!-- Bottom Navigation -->
@@ -80,14 +67,15 @@
         android:id="@+id/customBottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/white"
+        android:orientation="horizontal"
         android:padding="13dp"
         android:weightSum="5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
 
         <LinearLayout
             android:id="@+id/homeButton"
@@ -107,7 +95,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Home"
-                android:textColor="#3E66EF"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -192,8 +179,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Profile"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="#3E66EF"/>
+
         </LinearLayout>
+
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

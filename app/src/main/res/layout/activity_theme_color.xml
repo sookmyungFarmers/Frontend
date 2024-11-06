@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- fragment_language.xml -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="UseSwitchCompatOrMaterialXml"
+    android:id="@+id/theme_color_setting">
+
+    <ImageView
+        android:id="@+id/theme_color_go_back"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
+        android:src="@drawable/ic_arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/colorthemeTextView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:text="학습 테마 설정"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/theme_color_go_back" />
+
+
+    <!-- Line -->
+    <View
+        android:id="@+id/divider111"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#BDBDBD"
+        app:layout_constraintTop_toBottomOf="@id/colorthemeTextView" />
+
+    <!-- green -->
+    <TextView
+        android:id="@+id/green_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="초록"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/divider111"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- green 체크 표시 -->
+    <ImageView
+        android:id="@+id/green_check"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/green_label"
+        app:layout_constraintBottom_toBottomOf="@id/green_label" />
+
+
+    <View
+        android:id="@+id/divider112"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/green_label" />
+
+
+    <!-- pink -->
+    <TextView
+        android:id="@+id/pink_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="핑크"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/divider112"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- pink 체크 표시 -->
+    <ImageView
+        android:id="@+id/pink_check"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pink_label"
+        app:layout_constraintBottom_toBottomOf="@id/pink_label" />
+
+    <View
+        android:id="@+id/divider113"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/pink_label" />
+
+    <!-- blue -->
+    <TextView
+        android:id="@+id/blue_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="파랑"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/divider113"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- cpp 체크 표시 -->
+    <ImageView
+        android:id="@+id/blue_check"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/blue_label"
+        app:layout_constraintBottom_toBottomOf="@id/blue_label" />
+
+    <View
+        android:id="@+id/divider114"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/blue_label" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -2,31 +2,22 @@ package com.haeun.sprinkler1
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
+import android.util.Log
+import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import com.haeun.sprinkler1.R
+import androidx.constraintlayout.widget.ConstraintLayout
 
-class MainActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_profile)
 
-        // 잔디 보러가기
-        val myGrass = findViewById<ImageView>(R.id.myGrass)
-
-        // 네비게이션 버튼 클릭 이벤트 설정
         val homeButton = findViewById<LinearLayout>(R.id.homeButton)
         val questionButton = findViewById<LinearLayout>(R.id.questionButton)
         val reviewButton = findViewById<LinearLayout>(R.id.reviewButton)
         val friendsButton = findViewById<LinearLayout>(R.id.friendsButton)
-        val profileButton = findViewById<LinearLayout>(R.id.profileButton)
-
-        myGrass.setOnClickListener {
-            // Home 버튼 클릭 시 처리할 작업
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
+        val settingButton: Button = findViewById<Button>(R.id.setting)
 
         homeButton.setOnClickListener {
             // Home 버튼 클릭 시 처리할 작업
@@ -52,10 +43,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        profileButton.setOnClickListener {
-            // Profile 버튼 클릭 시 처리할 작업
-            val intent = Intent(this, SettingActivity::class.java)
-            startActivity(intent)
+        settingButton.setOnClickListener {
+            // SettingActivity로 이동
+            Log.d("ProfileActivity", "Setting button clicked")
+            startActivity(Intent(this, SettingActivity::class.java))
         }
     }
+
+
 }
