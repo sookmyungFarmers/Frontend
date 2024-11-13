@@ -10,7 +10,12 @@
     android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="UseSwitchCompatOrMaterialXml"
-    android:id="@+id/account_management">
+    android:id="@+id/account_management"
+    android:paddingTop="30dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingBottom="5dp"
+    android:background="#F5F5F5">
 
     <ImageView
         android:id="@+id/account_go_back"

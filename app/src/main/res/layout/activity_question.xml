@@ -4,7 +4,79 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E60F0F">
+    android:paddingTop="30dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingBottom="5dp"
+    android:background="#F5F5F5">
+
+    <!-- Question Title -->
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--Line-->
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionTextView"/>
+
+    <!-- 알고리즘 유형별 학습 -->
+    <TextView
+        android:id="@+id/algorithmStudyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_background"
+        android:padding="10dp"
+        android:text="알고리즘 유형별 학습"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider1" />
+
+    <!-- 문제 추천 학습 -->
+    <TextView
+        android:id="@+id/recommendQuestionView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_background"
+        android:padding="10dp"
+        android:text="문제 추천 학습"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/algorithmStudyView" />
+
+    <!-- CS 지식 퀴즈 -->
+    <TextView
+        android:id="@+id/csQuizView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_background"
+        android:padding="10dp"
+        android:text="CS 지식 퀴즈"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recommendQuestionView" />
+
+    <!--Line2-->
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BDBDBD"
+        app:layout_constraintBottom_toTopOf="@+id/customBottomNavigation" />
 
     <!-- Bottom Navigation -->
     <LinearLayout
@@ -12,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="?android:attr/windowBackground"
+        android:background="#F5F5F5"
         android:orientation="horizontal"
         android:padding="13dp"
         android:weightSum="5"

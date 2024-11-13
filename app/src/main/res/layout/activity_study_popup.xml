@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     android:background="#B0D9B1"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="30dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingBottom="5dp">
 
     <ImageView
         android:id="@+id/alarm_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerInParent="true"
         android:src="@drawable/ic_alarm" />
 

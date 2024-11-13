@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -10,14 +9,16 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".StudytimeActivity">
+    tools:context=".StudytimeActivity"
+    android:paddingTop="30dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingBottom="5dp">
 
     <TextView
         android:id="@+id/toolbar_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
         android:text="풀이 시간을 설정하세요"
         android:textColor="@android:color/black"
         android:textSize="35sp"
