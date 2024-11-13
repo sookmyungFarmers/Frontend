@@ -48,7 +48,7 @@
     <!-- 전체 알림 -->
     <TextView
         android:id="@+id/all_notifications_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="전체 알림"
         android:textSize="18sp"
@@ -82,7 +82,7 @@
     <!-- 학습 알림 항목 -->
     <TextView
         android:id="@+id/learning_notification_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="학습 알림"
         android:textSize="18sp"

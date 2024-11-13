@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         profileButton.setOnClickListener {
             // Profile 버튼 클릭 시 처리할 작업
-            val intent = Intent(this, SettingActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
     }

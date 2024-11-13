@@ -23,7 +23,7 @@
 
     <!--Line-->
     <View
-        android:id="@+id/divider3"
+        android:id="@+id/divider202"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#BDBDBD"
@@ -41,11 +41,11 @@
         android:text="👤 강민서"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider3" />
+        app:layout_constraintTop_toBottomOf="@id/divider202" />
 
     <!--line-->
     <View
-        android:id="@+id/divider"
+        android:id="@+id/divider203"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -63,11 +63,11 @@
         android:text="👤 윤보라"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        app:layout_constraintTop_toBottomOf="@id/divider203" />
 
     <!--line-->
     <View
-        android:id="@+id/divider16"
+        android:id="@+id/divider204"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -85,11 +85,11 @@
         android:text="👤 윤하은"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider16" />
+        app:layout_constraintTop_toBottomOf="@id/divider204" />
 
     <!--line-->
     <View
-        android:id="@+id/divider17"
+        android:id="@+id/divider205"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -107,11 +107,11 @@
         android:text="👤 이서연"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider17" />
+        app:layout_constraintTop_toBottomOf="@id/divider205" />
 
     <!--line-->
     <View
-        android:id="@+id/divider19"
+        android:id="@+id/divider206"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -129,11 +129,11 @@
         android:text="👤 김숙명"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider19" />
+        app:layout_constraintTop_toBottomOf="@id/divider206" />
 
     <!--line-->
     <View
-        android:id="@+id/divider20"
+        android:id="@+id/divider207"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -151,11 +151,11 @@
         android:text="👤 박명신"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider20" />
+        app:layout_constraintTop_toBottomOf="@id/divider207" />
 
     <!--line-->
     <View
-        android:id="@+id/divider18"
+        android:id="@+id/divider208"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -172,11 +172,11 @@
         android:src="@drawable/invite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider18" />
+        app:layout_constraintTop_toBottomOf="@id/divider208" />
 
 
     <View
-        android:id="@+id/divider4"
+        android:id="@+id/divider209"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"

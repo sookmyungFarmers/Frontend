@@ -45,7 +45,7 @@
     <!-- green -->
     <TextView
         android:id="@+id/green_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="초록"
         android:textSize="18sp"
@@ -78,7 +78,7 @@
     <!-- pink -->
     <TextView
         android:id="@+id/pink_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="핑크"
         android:textSize="18sp"
@@ -109,7 +109,7 @@
     <!-- blue -->
     <TextView
         android:id="@+id/blue_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="파랑"
         android:textSize="18sp"

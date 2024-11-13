@@ -29,12 +29,12 @@
         android:text="⚙️"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <!--Line-->
     <View
-        android:id="@+id/divider3"
+        android:id="@+id/divider200"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#BDBDBD"
@@ -48,14 +48,14 @@
         android:layout_width="410dp"
         android:layout_height="560dp"
         android:src="@drawable/profile"
-        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintBottom_toTopOf="@+id/divider201"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        app:layout_constraintTop_toBottomOf="@+id/divider200" />
 
     <!--Line-->
     <View
-        android:id="@+id/divider4"
+        android:id="@+id/divider201"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"

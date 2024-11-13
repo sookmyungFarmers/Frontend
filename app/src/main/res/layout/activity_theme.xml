@@ -46,7 +46,7 @@
     <!-- 다크모드 설정 -->
     <TextView
         android:id="@+id/dark_mode_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="다크모드 설정"
         android:textSize="18sp"
@@ -77,7 +77,7 @@
     <!-- 학습 테마 설정 -->
     <TextView
         android:id="@+id/learning_theme_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="학습 테마 설정"
         android:textSize="18sp"

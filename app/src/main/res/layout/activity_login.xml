@@ -11,14 +11,27 @@
     android:gravity="center"
     tools:context=".LoginActivity">
 
+    <!-- 깃허브로 안넘어가고 다음 액티비티로 이동 -->
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@android:color/black"
+        android:padding="15dp"
+        android:text="다음화면"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
     <!-- GitHub 로고 이미지 -->
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/gitlogo"
         android:contentDescription="GitHub Logo"
-        android:layout_marginBottom="32dp" />
+        android:layout_marginBottom="50dp" />
 
     <!-- GitHub로 시작하기 버튼 -->
     <Button

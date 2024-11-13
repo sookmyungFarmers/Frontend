@@ -46,7 +46,7 @@
     <!-- python -->
     <TextView
         android:id="@+id/python_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="python"
         android:textSize="18sp"
@@ -79,7 +79,7 @@
     <!-- java -->
     <TextView
         android:id="@+id/java_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Java"
         android:textSize="18sp"
@@ -110,7 +110,7 @@
     <!-- cpp -->
     <TextView
         android:id="@+id/cpp_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="C++"
         android:textSize="18sp"
