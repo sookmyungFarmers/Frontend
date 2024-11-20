@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,7 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sprinkler1"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
+        >
+
+        <activity
+            android:name=".ReviewNoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProblemExplanationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReadMeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TodayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QuestionSolve2Activity"
+            android:exported="false" />
         <activity
             android:name=".QuestionSolve1Activity"
             android:exported="false" />
@@ -48,7 +64,6 @@
         <activity
             android:name=".SettingActivity"
             android:exported="false" />
-
         <activity
             android:name=".ReviewActivity"
             android:exported="false" />
@@ -60,8 +75,9 @@
             android:exported="false" />
         <activity
             android:name=".FriendsActivity"
-            android:exported="false" />
-        <!-- <activity --><!-- android:name=".UserSettingActivity" --><!-- android:exported="false" /> -->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".UserSettingActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".StudytimeActivity"
             android:exported="false" />
@@ -77,21 +93,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="myapp"
-                    android:host="callback" />
+                    android:host="callback"
+                    android:scheme="myapp" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".GitLoginActivity"
             android:exported="false" />
