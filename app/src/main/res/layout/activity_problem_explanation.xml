@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="문제 해설"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_weight="1"
@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Close"
-            android:textSize="14sp"
+            android:textSize="20sp"
             android:textColor="@color/blue1"
             android:background="@android:color/transparent"
             android:padding="1dp" />

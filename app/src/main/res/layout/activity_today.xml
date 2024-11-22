@@ -288,7 +288,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Question"
-                android:textColor="#3E66EF"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -310,6 +309,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Review"
+                android:textColor="#3E66EF"
                 android:textSize="14sp" />
         </LinearLayout>
 

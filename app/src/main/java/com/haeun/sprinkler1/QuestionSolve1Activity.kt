@@ -2,6 +2,7 @@ package com.haeun.sprinkler1
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -14,6 +15,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import java.io.IOException
+import java.net.UnknownHostException
+import java.net.SocketTimeoutException
+import java.net.ConnectException
+import java.net.NoRouteToHostException
 
 class QuestionSolve1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,15 +63,26 @@ class QuestionSolve1Activity : AppCompatActivity() {
                     descriptionTextView.text = question.description
                 }
             } catch (e: Exception) {
+                // 예외 처리
                 withContext(Dispatchers.Main) {
                     val errorMessage = when (e) {
-                        is HttpException -> "HTTP 오류: ${e.code()}"
-                        is IOException -> "네트워크 연결 문제"
-                        else -> "알 수 없는 오류: ${e.message}"
+                        is HttpException -> "HTTP 오류: ${e.code()} - ${e.message()}"
+                        is UnknownHostException -> "호스트를 찾을 수 없습니다: ${e.message}"
+                        is SocketTimeoutException -> "서버 응답 시간이 초과되었습니다."
+                        is ConnectException -> "서버에 연결할 수 없습니다: ${e.message}"
+                        is NoRouteToHostException -> "호스트로의 경로를 찾을 수 없습니다: ${e.message}"
+                        is IOException -> "네트워크 연결 문제: ${e.message}"
+                        else -> "알 수 없는 오류 발생: ${e.message}"
                     }
-                    Toast.makeText(this@QuestionSolve1Activity, errorMessage, Toast.LENGTH_SHORT).show()
+
+                    // 사용자에게 메시지 표시
+                    Toast.makeText(this@QuestionSolve1Activity, errorMessage, Toast.LENGTH_LONG).show()
+
+                    // 디버깅 로그 기록
+                    Log.e("NetworkError", "Exception 발생: ${e.localizedMessage}", e)
                 }
             }
         }
     }
 }
+
