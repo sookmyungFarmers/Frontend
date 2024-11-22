@@ -35,7 +35,7 @@
     <!--friend1-->
     <TextView
         android:id="@+id/friend1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="👤 강민서"
@@ -57,7 +57,7 @@
     <!--friend2-->
     <TextView
         android:id="@+id/friend2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="👤 윤보라"
@@ -79,7 +79,7 @@
     <!--friend3-->
     <TextView
         android:id="@+id/friend3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="👤 윤하은"
@@ -101,7 +101,7 @@
     <!--friend4-->
     <TextView
         android:id="@+id/friend4"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="👤 이서연"
@@ -123,7 +123,7 @@
     <!--friend5-->
     <TextView
         android:id="@+id/friend5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="👤 김숙명"
@@ -145,7 +145,7 @@
     <!--friend6-->
     <TextView
         android:id="@+id/friend6"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="👤 박명신"

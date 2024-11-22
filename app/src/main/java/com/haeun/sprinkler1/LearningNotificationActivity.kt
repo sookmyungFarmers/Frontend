@@ -1,6 +1,7 @@
 package com.haeun.sprinkler1
 
 import android.app.TimePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -24,6 +25,7 @@ class LearningNotificationActivity : AppCompatActivity() {
         study_notification_go_back.setOnClickListener {
             finish()
         }
+
 
         // 시간 표시 TextView 초기화
         timeTextView = findViewById(R.id.timeTextView)
