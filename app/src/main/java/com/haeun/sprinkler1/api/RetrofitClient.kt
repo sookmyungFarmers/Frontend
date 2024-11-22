@@ -1,13 +1,13 @@
 package com.example.haeun.com.haeun.sprinkler1.api
 
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
 
-    private const val BASE_URL = "http://192.168.56.1:8080/"
+    private const val BASE_URL = "http://172.20.5.189:8080/questions/"
 
     // OkHttpClient 설정
     private val client = OkHttpClient.Builder()
