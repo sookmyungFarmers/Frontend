@@ -7,13 +7,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.haeun.com.haeun.sprinkler1.api.Question
 import com.example.haeun.com.haeun.sprinkler1.api.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import kotlin.random.Random
-
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.HttpException
+import java.io.IOException
 
 class QuestionSolve1Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,39 +31,42 @@ class QuestionSolve1Activity : AppCompatActivity() {
         // 문제풀기 버튼
         val solveButton = findViewById<Button>(R.id.solveButton)
         solveButton.setOnClickListener {
-            // 문제풀기 버튼 클릭 시 실행할 코드 작성
-
+            val intent = Intent(this, QuestionSolve2Activity::class.java)
+            startActivity(intent)
         }
 
         val titleTextView: TextView = findViewById(R.id.titleTextView)
         val descriptionTextView: TextView = findViewById(R.id.descriptionTextView)
 
-        fetchRandomQuestion(titleTextView, descriptionTextView)
+        // 특정 문제 ID 가져오기 (예시: Intent로 전달된 ID 사용)
+        val questionId = intent.getLongExtra("questionId", -1L)
+        if (questionId != -1L) {
+            fetchQuestionById(questionId, titleTextView, descriptionTextView)
+        } else {
+            Toast.makeText(this, "문제 ID를 찾을 수 없습니다.", Toast.LENGTH_SHORT).show()
+        }
     }
 
-
-    private fun fetchRandomQuestion(titleTextView: TextView, descriptionTextView: TextView) {
-        // 모든 문제 목록 가져오기
-        RetrofitClient.apiService.getAllQuestions().enqueue(object : Callback<List<Question>> {
-            override fun onResponse(call: Call<List<Question>>, response: Response<List<Question>>) {
-                if (response.isSuccessful) {
-                    val questionList = response.body()
-                    if (!questionList.isNullOrEmpty()) {
-                        // 목록에서 랜덤으로 문제 선택
-                        val randomQuestion = questionList[Random.nextInt(questionList.size)]
-                        titleTextView.text = randomQuestion.title
-                        descriptionTextView.text = randomQuestion.description
-                    } else {
-                        Toast.makeText(this@QuestionSolve1Activity, "문제 목록이 비어 있습니다.", Toast.LENGTH_SHORT).show()
+    private fun fetchQuestionById(questionId: Long, titleTextView: TextView, descriptionTextView: TextView) {
+        // 코루틴으로 Retrofit suspend 함수 호출
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val question = RetrofitClient.apiService.getQuestionById(questionId) // suspend 함수 호출
+                withContext(Dispatchers.Main) {
+                    // UI 업데이트
+                    titleTextView.text = question.title
+                    descriptionTextView.text = question.description
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    val errorMessage = when (e) {
+                        is HttpException -> "HTTP 오류: ${e.code()}"
+                        is IOException -> "네트워크 연결 문제"
+                        else -> "알 수 없는 오류: ${e.message}"
                     }
-                } else {
-                    Toast.makeText(this@QuestionSolve1Activity, "문제 목록을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@QuestionSolve1Activity, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
-
-            override fun onFailure(call: Call<List<Question>>, t: Throwable) {
-                Toast.makeText(this@QuestionSolve1Activity, "네트워크 오류가 발생했습니다: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        }
     }
 }

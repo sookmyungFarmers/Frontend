@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingBottom="5dp"
+    android:background="#F5F5F5">
+
+    <!-- 상단 취소 및 저장 버튼 -->
+    <LinearLayout
+        android:id="@+id/topButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="#007AFF"
+            android:background="@android:color/transparent" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="#007AFF"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+    <!-- 제목 -->
+    <TextView
+        android:id="@+id/readmeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="백준 - 문제 1. 최대 힙 #12345"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/topButtons"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- 문제에 대한 정보 -->
+    <LinearLayout
+        android:id="@+id/questionInfoLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#D5E8D4"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/readmeTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/solveDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="풀이일자: 2024.08.20 TUE"
+            android:textSize="14sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/solveTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="풀이시간: 12m"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/solveStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="정답여부: Pass"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/solveDifficulty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="난이도: Easy"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- 댓글 영역 -->
+    <LinearLayout
+        android:id="@+id/commentLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/questionInfoLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rounded_background">
+
+        <TextView
+            android:id="@+id/commentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📌 Comment"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 댓글 내용 -->
+        <TextView
+            android:id="@+id/commentContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#heappush(heap, item)\n힙 삽입을 유지하면서 item 값을 heap으로 push하는 메소드\n\n#heappop(heap)\n최소힙의 루트값을 반환하고, heap에서 가장 작은 값을 제거하는 메소드"
+            android:textSize="14sp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- 문제 보기 버튼 -->
+    <Button
+        android:id="@+id/viewProblemButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="문제화면 보기"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#A2C09B"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/commentLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

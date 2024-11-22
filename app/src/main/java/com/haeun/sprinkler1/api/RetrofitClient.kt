@@ -4,15 +4,15 @@ import com.example.haeun.com.haeun.sprinkler1.api.LoginApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import com.google.gson.GsonBuilder
 
 object RetrofitClient {
-    //private const val BASE_URL = "https://6731f6c17aaf2a9aff12e58d.mockapi.io/" // 지금 mockup
-    private const val BASE_URL = "http://192.168.226.116:8080/"
+    private const val BASE_URL = "https://6731f6c17aaf2a9aff12e58d.mockapi.io/" // 실제 백엔드 URL로 변경, 지금 mockup
 
     val apiService: ProblemApiService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create()) // JSON 변환을 위한 Gson 추가
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ProblemApiService::class.java)
     }
@@ -35,9 +35,3 @@ object RetrofitClient {
     }
 
 }
-
-
-
-
-
-

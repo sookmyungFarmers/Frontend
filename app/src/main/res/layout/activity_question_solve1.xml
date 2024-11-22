@@ -9,18 +9,18 @@
     android:paddingBottom="5dp"
     android:background="#F5F5F5">
 
-    <!-- 문제 제목 -->
+    <!-- 문제 제목 표시 -->
     <TextView
-        android:id="@+id/algorithmTitleTextView"
+        android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="문제 1. 최대힙"
-        android:textSize="20sp"
+        android:text="문제 제목"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <!-- 종료 버튼 -->
     <Button
@@ -45,19 +45,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/algorithmTitleTextView"/>
-
-    <!-- 문제 제목 표시 -->
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="문제제목"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider1"/>
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"/>
 
     <!-- 문제 표시 영역 -->
     <ScrollView
@@ -65,7 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#D5E8D4"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintTop_toBottomOf="@id/divider1"
         app:layout_constraintBottom_toTopOf="@id/solveButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

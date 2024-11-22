@@ -1,127 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".QuestionSolve2Activity"
     android:paddingTop="30dp"
     android:paddingStart="18dp"
     android:paddingEnd="18dp"
     android:paddingBottom="5dp"
     android:background="#F5F5F5">
 
-    <!-- 상단의 타이틀 -->
+    <!-- 문제 제목 표시 -->
     <TextView
-        android:id="@+id/questionTimeTitle"
-        android:layout_width="match_parent"
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="학습을 시작하세요"
-        android:textSize="30sp"
-        android:textColor="@color/black"
+        android:text="문제 제목"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- 남은 시간을 표시할 TextView -->
+    <TextView
+        android:id="@+id/remainingTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="남은 시간: 1시간 00분"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/endButton"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <!-- 종료 버튼 -->
+    <Button
+        android:id="@+id/endButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="종료"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:backgroundTint="#A2C09B"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
     <!--Line-->
     <View
         android:id="@+id/divider1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#BDBDBD"
         android:layout_marginTop="15dp"
-        android:padding="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/questionTimeTitle"/>
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"/>
 
-    <!-- CardView로 배경 처리 -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/questionDescriptionView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="30dp"
-        app:cardBackgroundColor="#B0D9B1"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/customBottomNavigation"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="15dp"
+        android:text="문제 설명"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider1">
+        app:layout_constraintTop_toBottomOf="@id/divider1" />
 
-        <!-- CardView 안에 있는 콘텐츠 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- 문제 표시 영역 -->
+    <ScrollView
+        android:id="@+id/questionScrollView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:background="#D5E8D4"
+        app:layout_constraintTop_toBottomOf="@id/questionDescriptionView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- 문제 내용 TextView -->
+        <TextView
+            android:id="@+id/descriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="45dp">
+            android:text="문제 세부 내용 로딩 중..."
+            android:textSize="16sp"
+            android:padding="16dp" />
+    </ScrollView>
 
-            <!-- 이미지 (알람 시계) -->
-            <ImageView
-                android:id="@+id/imgClock"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_alarm"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/choice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선지1"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionScrollView" />
 
-            <!-- 시간 설정 텍스트 -->
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="30dp"
-                android:paddingBottom="10dp"
-                android:text="30분"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgClock" />
-
-            <!-- 설명 텍스트 -->
-            <TextView
-                android:id="@+id/tvDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="학습시간을 재설정할 수 있습니다"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/time" />
-
-            <!-- 시간 조절용 SeekBar -->
-            <SeekBar
-                android:id="@+id/seekBar"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:max="60"
-                android:paddingTop="10dp"
-                android:paddingBottom="30dp"
-                android:progress="30"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
-
-            <!-- 학습 시작 버튼 -->
-            <Button
-                android:id="@+id/btnStartStudy"
-                android:layout_width="200dp"
-                android:layout_height="70dp"
-                android:layout_marginTop="20dp"
-                android:backgroundTint="@color/cardview_dark_background"
-                android:text="학습하기"
-                android:textColor="@color/white"
-                android:textSize="25sp"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/seekBar" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/choice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선지2"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choice1" />
 
     <!--Line2-->
     <View
@@ -252,5 +250,6 @@
         </LinearLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
 
+
+</androidx.constraintlayout.widget.ConstraintLayout>
