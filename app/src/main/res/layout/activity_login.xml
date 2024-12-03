@@ -11,18 +11,6 @@
     android:gravity="center"
     tools:context=".LoginActivity">
 
-    <!-- 깃허브로 안넘어가고 다음 액티비티로 이동 -->
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="@android:color/black"
-        android:padding="15dp"
-        android:text="다음화면"
-        android:textColor="@android:color/white"
-        android:textSize="10sp"
-        android:textStyle="bold" />
 
     <!-- GitHub 로고 이미지 -->
     <ImageView

@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // 사용자 정보 요청
         //fetchUserInfoAndUpdateUI()
 
-        val myGrass = findViewById<ImageView>(R.id.myGrass)
+        val myGrass = findViewById<TextView>(R.id.myGrass)
         val homeButton = findViewById<LinearLayout>(R.id.homeButton)
         val questionButton = findViewById<LinearLayout>(R.id.questionButton)
         val reviewButton = findViewById<LinearLayout>(R.id.reviewButton)

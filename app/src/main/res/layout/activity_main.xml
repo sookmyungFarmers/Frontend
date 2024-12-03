@@ -66,11 +66,16 @@
 
 
     <!--Grass Image-->
-    <ImageView
+    <TextView
         android:id="@+id/myGrass"
-        android:layout_width="385dp"
-        android:layout_height="60dp"
-        android:src="@drawable/rounded_background"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="🌴잔디보러가기 🌴"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_background"
         app:layout_constraintBottom_toTopOf="@+id/customBottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
