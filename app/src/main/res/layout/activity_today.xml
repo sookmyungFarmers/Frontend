@@ -59,8 +59,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/rounded_background"
         android:padding="10dp"
-        android:text="알고리즘 유형별 학습"
-        android:textSize="20dp"
+        android:text="문제 1. 최대 힙 #12345"
+        android:textSize="18dp"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
         app:layout_constraintTop_toBottomOf="@+id/correctAnswer" />
 
@@ -288,7 +288,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Question"
-                android:textColor="#3E66EF"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -310,6 +309,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Review"
+                android:textColor="#3E66EF"
                 android:textSize="14sp" />
         </LinearLayout>
 
