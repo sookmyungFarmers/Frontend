@@ -9,7 +9,6 @@ object RetrofitClient {
     // private const val BASE_URL = "https://6731f6c17aaf2a9aff12e58d.mockapi.io/" // 실제 백엔드 URL로 변경, 지금 mockup
     // private const val BASE_URL = "myapp://callback"
     private const val BASE_URL1 = "https://github.com/"
-
     private const val BASE_URL = "http://172.20.5.54:8080/" // 실제 서버 URL
 
     // OkHttpClient 설정
@@ -27,6 +26,15 @@ object RetrofitClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ProblemApiService::class.java)
+    }
+
+    val readMeApiService: ReadMeApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ReadMeApiService::class.java)
     }
 
     val settingsApiService: SettingsApiService by lazy {
