@@ -108,6 +108,9 @@
                 <data
                     android:scheme="myapp"
                     android:host="callback" />
+
+
+
             </intent-filter>
         </activity>
 

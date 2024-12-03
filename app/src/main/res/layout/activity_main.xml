@@ -39,8 +39,8 @@
     <TextView
         android:id="@+id/messageTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/rounded_background"
         android:padding="10dp"
         android:text="8월 20일, 오늘은 아직 커밋하지 않았어요 :)"
@@ -54,7 +54,11 @@
         android:layout_width="385dp"
         android:layout_height="350dp"
         android:layout_marginTop="30dp"
-        android:src="@drawable/rounded_background"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/homefake"
+        android:scaleType="centerCrop"
+        android:scaleX="1.4"
+        android:scaleY="1.1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messageTextView" />

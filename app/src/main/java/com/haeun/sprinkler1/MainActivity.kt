@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         messageTextView = findViewById(R.id.messageTextView)
 
         // 사용자 정보 요청
-        fetchUserInfoAndUpdateUI()
+        //fetchUserInfoAndUpdateUI()
 
         val myGrass = findViewById<ImageView>(R.id.myGrass)
         val homeButton = findViewById<LinearLayout>(R.id.homeButton)
@@ -72,50 +72,55 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchUserInfoAndUpdateUI() {
-        // RetrofitClient에서 LoginApiService 가져오기
-        val apiService = RetrofitClient.loginApiService
+    override fun onResume() {
+        super.onResume()
+        messageTextView.text = "윤하은님, 오늘 커밋 완료했어요 :)"
 
-        // 저장된 액세스 토큰 (이전 로그인 시 저장한 토큰을 가져옴)
-        val sharedPref = getSharedPreferences("auth", MODE_PRIVATE)
-        val accessToken = sharedPref.getString("access_token", null)
-
-        if (accessToken != null) {
-            // 사용자 정보 요청
-            apiService.getLoggedInUserInfo(accessToken).enqueue(object : Callback<User> {
-                override fun onResponse(call: Call<User>, response: Response<User>) {
-                    if (response.isSuccessful) {
-                        val user = response.body()
-                        if (user != null) {
-                            updateMessageBasedOnCommitStatus(user.todayCommit)
-                        }
-                    } else {
-                        // 오류 처리 (예: 토큰 만료)
-                        messageTextView.text = "사용자 정보를 가져오지 못했습니다."
-                    }
-                }
-
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    // 네트워크 또는 서버 오류 처리
-                    messageTextView.text = "네트워크 오류가 발생했습니다."
-                }
-            })
-        } else {
-            // 액세스 토큰이 없는 경우
-            messageTextView.text = "로그인이 필요합니다."
-
-        }
     }
-
-    private fun updateMessageBasedOnCommitStatus(todayCommit: Boolean) {
-
-        val currentDate = SimpleDateFormat("MM월 dd일", java.util.Locale.getDefault()).format(Calendar.getInstance().time)
-
-        // 커밋 상태에 따라 메시지 업데이트
-        if (todayCommit) {
-            messageTextView.text = "오늘 커밋 완료했어요 :)"
-        } else {
-            messageTextView.text = "$currentDate, 오늘은 아직 커밋하지 않았어요 :)"
-        }
-    }
+//    private fun fetchUserInfoAndUpdateUI() {
+//        // RetrofitClient에서 LoginApiService 가져오기
+//        val apiService = RetrofitClient.loginApiService
+//
+//        // 저장된 액세스 토큰 (이전 로그인 시 저장한 토큰을 가져옴)
+//        val sharedPref = getSharedPreferences("auth", MODE_PRIVATE)
+//        val accessToken = sharedPref.getString("access_token", null)
+//
+//        if (accessToken != null) {
+//            // 사용자 정보 요청
+//            apiService.getLoggedInUserInfo(accessToken).enqueue(object : Callback<User> {
+//                override fun onResponse(call: Call<User>, response: Response<User>) {
+//                    if (response.isSuccessful) {
+//                        val user = response.body()
+//                        if (user != null) {
+//                            //updateMessageBasedOnCommitStatus(user.todayCommit)
+//                        }
+//                    } else {
+//                        // 오류 처리 (예: 토큰 만료)
+//                        messageTextView.text = "사용자 정보를 가져오지 못했습니다."
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<User>, t: Throwable) {
+//                    // 네트워크 또는 서버 오류 처리
+//                    messageTextView.text = "네트워크 오류가 발생했습니다."
+//                }
+//            })
+//        } else {
+//            // 액세스 토큰이 없는 경우
+//            messageTextView.text = "로그인이 필요합니다."
+//
+//        }
+//    }
+//
+//    private fun updateMessageBasedOnCommitStatus(todayCommit: Boolean) {
+//
+//        val currentDate = SimpleDateFormat("MM월 dd일", java.util.Locale.getDefault()).format(Calendar.getInstance().time)
+//
+//        // 커밋 상태에 따라 메시지 업데이트
+//        if (todayCommit) {
+//            messageTextView.text = "오늘 커밋 완료했어요 :)"
+//        } else {
+//            messageTextView.text = "$currentDate, 오늘은 아직 커밋하지 않았어요 :)"
+//        }
+//    }
 }
