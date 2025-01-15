@@ -11,27 +11,18 @@
     android:paddingBottom="5dp"
     android:background="#F5F5F5">
 
-    <!-- UserName Title -->
+    <!-- UserName -->
     <TextView
         android:id="@+id/titleTextView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UserName, "
+        android:text="UserName "
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/titleTextView100"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="반갑습니다."
-        android:textSize="25sp"
-        android:layout_marginLeft="50dp"
-        app:layout_constraintEnd_toStartOf="@+id/setting"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Setting -->
     <TextView
         android:id="@+id/setting"
         android:layout_width="wrap_content"
@@ -69,34 +60,73 @@
                 android:id="@+id/repoText"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="현재 레포지토리"
-                android:textSize="18sp"
+                android:text="현재 레포지토리 🔖"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- 레포지토리 이미지 -->
-            <ImageView
+            <!-- 레포지토리 -->
+            <FrameLayout
                 android:id="@+id/repo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="350dp"
+                android:layout_height="110dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/repo"
+                android:background="@drawable/rounded_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/repoText" />
+                app:layout_constraintTop_toBottomOf="@id/repoText">
+
+                <!-- username -->
+                <TextView
+                    android:id="@+id/repoEmoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="👧"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/repoUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="13sp" />
+
+                <!-- repo name -->
+                <TextView
+                    android:id="@+id/repoName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="50dp"
+                    android:textSize="13sp" />
+
+            </FrameLayout>
+
+            <!-- Line -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#BDBDBD"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/repo" />
 
             <!-- 나의 잔디 텍스트 -->
             <TextView
                 android:id="@+id/grassText"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:text="나의 잔디"
-                android:textSize="18sp"
+                android:text="나의 잔디 🌱"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/repo" />
@@ -112,29 +142,39 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/grassText" />
 
-            <!-- 나의 상태 텍스트 -->
-            <TextView
-                android:id="@+id/graphText"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:text="나의 상태"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"
+            <!-- Line -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#BDBDBD"
+                android:layout_marginTop="15dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/githubGrassImage" />
 
-            <!-- 상태 그래프 이미지 -->
-            <ImageView
-                android:id="@+id/graph"
-                android:layout_width="wrap_content"
+            <!-- 나의 뱃지 텍스트 -->
+            <TextView
+                android:id="@+id/badgeText"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
+                android:text="나의 뱃지 🏅"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="35dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/githubGrassImage" />
+
+            <!-- 뱃지 이미지 -->
+            <ImageView
+                android:id="@+id/badge"
+                android:layout_width="350dp"
+                android:layout_height="110dp"
                 android:layout_marginTop="15dp"
-                android:src="@drawable/graph"
+                android:background="@drawable/rounded_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/graphText" />
+                app:layout_constraintTop_toBottomOf="@id/badgeText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

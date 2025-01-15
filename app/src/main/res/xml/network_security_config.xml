@@ -3,6 +3,6 @@
     <domain-config cleartextTrafficPermitted="true">
 <!--        <domain includeSubdomains="true">192.168.56.1</domain>-->
         <domain includeSubdomains="true">ghchart.rshah.org</domain>
-        <domain includeSubdomains="true">172.20.10.222</domain>
+        <domain includeSubdomains="true">192.168.19.248</domain>
     </domain-config>
 </network-security-config>

@@ -1,18 +1,17 @@
 package com.haeun.sprinkler1
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.haeun.com.haeun.sprinkler1.api.RetrofitClient
-import com.example.haeun.com.haeun.sprinkler1.api.User
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.text.SimpleDateFormat
-import java.util.Calendar
+
+// 1. 커밋한 날짜에 진한 초록으로 칠하기
+// 2. 커밋 메시지 변경
 
 class MainActivity : AppCompatActivity() {
     private lateinit var messageTextView: TextView
@@ -25,21 +24,37 @@ class MainActivity : AppCompatActivity() {
         // 메시지 TextView 가져오기
         messageTextView = findViewById(R.id.messageTextView)
 
+        // 이 달의 잔디
+        val calendarGrid = findViewById<GridLayout>(R.id.calendarGrid)
+
+        // 날짜 생성 (1일부터 31일까지) -> 일 수 고려해야함
+        for (day in 1..31) {
+            val dayTextView = TextView(this).apply {
+                text = day.toString()
+                textSize = 16f
+                setTextColor(Color.BLACK)
+                gravity = Gravity.CENTER
+                layoutParams = GridLayout.LayoutParams().apply {
+                    width = 35.dpToPx() // TextView의 크기
+                    height = 35.dpToPx()
+                    setMargins(6.dpToPx(), 6.dpToPx(), 6.dpToPx(), 6.dpToPx()) // 날짜 간격
+                }
+                setBackgroundResource(R.drawable.rounded_background_white)
+            }
+            calendarGrid.addView(dayTextView)
+        }
+
+
         // 사용자 정보 요청
         //fetchUserInfoAndUpdateUI()
 
-        val myGrass = findViewById<TextView>(R.id.myGrass)
+        val myGrass = findViewById<LinearLayout>(R.id.myGrass)
         val homeButton = findViewById<LinearLayout>(R.id.homeButton)
         val questionButton = findViewById<LinearLayout>(R.id.questionButton)
         val reviewButton = findViewById<LinearLayout>(R.id.reviewButton)
         val friendsButton = findViewById<LinearLayout>(R.id.friendsButton)
         val profileButton = findViewById<LinearLayout>(R.id.profileButton)
 
-        myGrass.setOnClickListener {
-            // Home 버튼 클릭 시 처리할 작업
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
 
         homeButton.setOnClickListener {
             // Home 버튼 클릭 시 처리할 작업
@@ -72,9 +87,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun Int.dpToPx(): Int {
+        val density = resources.displayMetrics.density
+        return (this * density).toInt()
+    }
+
     override fun onResume() {
         super.onResume()
-        messageTextView.text = "윤하은님, 오늘 커밋 완료했어요 :)"
+        messageTextView.text = "윤하은님, 오늘 문제풀이 완료했어요 :)"
 
     }
 //    private fun fetchUserInfoAndUpdateUI() {

@@ -1,25 +1,13 @@
 package com.haeun.sprinkler1
 
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
 import com.example.haeun.com.haeun.sprinkler1.api.GitHubEvent
-import com.example.haeun.com.haeun.sprinkler1.api.GithubApiService
-import com.example.haeun.com.haeun.sprinkler1.api.RetrofitClient
 import com.example.haeun.com.haeun.sprinkler1.api.RetrofitClient.githubApiService
-import com.example.haeun.com.haeun.sprinkler1.api.User
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,9 +17,18 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        // TextView 참조
+        // title name
         val titleTextView4: TextView = findViewById(R.id.titleTextView4)
-        titleTextView4.text = "윤하은님,"
+        titleTextView4.text = "윤하은님" // 깃허브 연동 후 변경 예정
+
+        // repo username
+        val repoUserName: TextView = findViewById(R.id.repoUserName)
+        // repoUserName.text = "null"
+
+        // repo repoName
+        val repoName: TextView = findViewById(R.id.repoName)
+        repoName.text = "null" // 깃허브 연동 후 변경 예정
+
 
         // GitHub API 호출
         val GitHubGrassView = findViewById<GitHubGrassView>(R.id.githubGrassImage)
@@ -39,8 +36,12 @@ class ProfileActivity : AppCompatActivity() {
         val username = "haxxnshine"
 
         githubApiService.getUserEvents(username, token).enqueue(object : Callback<List<GitHubEvent>> {
-            override fun onResponse(call: Call<List<GitHubEvent>>, response: Response<List<GitHubEvent>>) {
+            override fun onResponse(
+                call: Call<List<GitHubEvent>>,
+                response: Response<List<GitHubEvent>>
+            ) {
                 if (response.isSuccessful) {
+                    repoUserName.text = username // username 표시
                     val events = response.body() ?: emptyList()
                     val commitDates = events.filter { it.type == "PushEvent" }
                         .groupBy { it.created_at.split("T")[0] }
@@ -60,6 +61,7 @@ class ProfileActivity : AppCompatActivity() {
 //                        .error(R.drawable.warning)
 //                        .into(githubGrassImage)
                 } else {
+                    repoUserName.text = "Error: ${response.code()}"
                     Log.e("GitHubAPI", "Error: ${response.code()}")
                 }
             }

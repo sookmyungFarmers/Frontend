@@ -6,10 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    // private const val BASE_URL = "https://6731f6c17aaf2a9aff12e58d.mockapi.io/" // 실제 백엔드 URL로 변경, 지금 mockup
-    // private const val BASE_URL = "myapp://callback"
+
     private const val BASE_URL2 = "https://github.com/"
-    private const val BASE_URL1 = "http://172.20.10.222:8080/" // 실제 서버 URL
+    private const val BASE_URL1 = "http://192.168.19.248:8080/" // 실제 서버 URL
 
     // OkHttpClient 설정
     private val client = OkHttpClient.Builder()
@@ -37,6 +36,15 @@ object RetrofitClient {
             .create(ReadMeApiService::class.java)
     }
 
+    val githubApiService: GithubApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://api.github.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(GithubApiService::class.java)
+
+    }
+
     val settingsApiService: SettingsApiService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL2)
@@ -53,16 +61,5 @@ object RetrofitClient {
             .create(LoginApiService::class.java)
 
     }
-
-    val githubApiService: GithubApiService by lazy {
-        Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(GithubApiService::class.java)
-
-    }
-
-
 
 }

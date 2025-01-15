@@ -33,14 +33,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView"/>
 
-    <!-- Message -->
-
-    <!--Grass Image-->
+    <!-- 오늘의 커밋 메세지 -->
     <TextView
         android:id="@+id/messageTextView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/rounded_background"
         android:padding="10dp"
         android:text="8월 20일, 오늘은 아직 커밋하지 않았어요 :)"
@@ -49,37 +47,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
-    <ImageView
-        android:id="@+id/myGrass2"
-        android:layout_width="385dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:src="@drawable/homefake"
-        android:scaleType="centerCrop"
-        android:scaleX="1.4"
-        android:scaleY="1.1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/messageTextView" />
-
-
-
-    <!--Grass Image-->
-    <TextView
+    <!-- 이번달 잔디 -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/myGrass"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:text="🌴잔디보러가기 🌴"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:padding="8dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/messageTextView"
+        android:layout_marginTop="30dp"
+        android:padding="16dp"
         android:background="@drawable/rounded_background"
-        app:layout_constraintBottom_toTopOf="@+id/customBottomNavigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myGrass2" />
+        tools:ignore="MissingConstraints">
+
+        <!-- 제목 텍스트 -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  1월의 잔디"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 달력 그리드 -->
+        <GridLayout
+            android:id="@+id/calendarGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="7"
+            android:layout_marginBottom="20dp">
+            <!-- 날짜 버튼 코틀린파일에서 동적으로 추가함 -->
+        </GridLayout>
+    </LinearLayout>
 
     <!--Line2-->
     <View
